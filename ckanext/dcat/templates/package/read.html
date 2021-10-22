@@ -1,0 +1,13 @@
+{% ckan_extends %}
+
+{% block primary_content_inner %}
+    {{ super() }}
+
+    <h3>Metadata Downloads</h3>
+    <div class="btn-toolbar">
+        <a class="btn btn-default"href="{{ h.url_for('dcat_dataset',controller='ckanext.dcat.controllers:DCATController',action='read_dataset', _id=pkg.id, _format='n3') }}">n3</a>
+        <a class="btn btn-default" href="{{ h.url_for('dcat_dataset',controller='ckanext.dcat.controllers:DCATController',action='read_dataset', _id=pkg.id, _format='ttl') }}">ttl</a>
+        <a class="btn btn-default"href="{{ h.url_for('dcat_dataset',controller='ckanext.dcat.controllers:DCATController',action='read_dataset', _id=pkg.id, _format='xml') }}">xml</a>
+        <a class="btn btn-default"href="{{ h.url_for('dcat_dataset',controller='ckanext.dcat.controllers:DCATController',action='read_dataset', _id=pkg.id, _format='jsonld') }}">jsonld</a>    
+    </div>
+{% endblock primary_content_inner %}
